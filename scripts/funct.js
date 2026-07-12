@@ -124,7 +124,14 @@ function updateCount()
     available.innerText = counts[currentTab];
 
 
- 
+       if(counts[currentTab] < 1)
+    {
+        emptystate.classList.remove("hidden");
+
+    }
+    else{
+        emptystate.classList.add("hidden");
+    }
 
         
     
