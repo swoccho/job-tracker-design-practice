@@ -65,7 +65,9 @@ document.getElementById("jobs-card-container").addEventListener("click", functio
         console.log("Interview clicked");
         status.innerText = "Interviewed";
 
-        interviewContainer.appendChild(card);
+        const clonedcard = card.cloneNode(true);
+
+        interviewContainer.appendChild(clonedcard);
         updateCount();
 
     }
@@ -74,7 +76,8 @@ document.getElementById("jobs-card-container").addEventListener("click", functio
     {
         console.log("rejected clicked");
         status.innerText = "Rejected";
-        rejectedContainer.appendChild(card);
+        const clonedcard = card.cloneNode(true);
+        rejectedContainer.appendChild(clonedcard);
         updateCount();
     }
 
