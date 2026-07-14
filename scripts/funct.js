@@ -2,16 +2,14 @@ let currentTab = "all";
 
 const tabActive = ["bg-blue-600" , "text-white"];
 const allcontainer = document.getElementById("all-container");
-const interviewContainer = document.getElementById("interview-container");
-const rejectedContainer = document.getElementById("rejected-container");
 const emptystate = document.getElementById("empty-state");
 const available = document.getElementById("available");
 
-// console.log(allcontainer,interviewContainer,rejectedContainer)
+
 
 function switchTab(tab)
 {
-    console.log(tab);
+    
 
     const tabs = ["all","interview","rejected"];
 
@@ -38,10 +36,6 @@ function switchTab(tab)
 }
 
 
-
-
-
-
 document.getElementById("jobs-card-container").addEventListener("click", function(event)
 {
     const clickedElement = event.target;
@@ -49,7 +43,7 @@ document.getElementById("jobs-card-container").addEventListener("click", functio
     const card = clickedElement.closest(".card");
 
     const status = card.querySelector(".js-status");
-    // const parent = card.parentNode;
+   
 
     
     if(clickedElement.classList.contains("interview"))
@@ -60,9 +54,7 @@ document.getElementById("jobs-card-container").addEventListener("click", functio
         status.classList.remove("bg-slate-300" , "border-red-600" , "text-red-600");
         status.classList.add("border-green-600" , "text-green-600");
 
-        // const clonedcard = card.cloneNode(true);
-
-        // interviewContainer.appendChild(clonedcard);
+       
         updateCount();
 
     }
@@ -75,11 +67,6 @@ document.getElementById("jobs-card-container").addEventListener("click", functio
         status.classList.remove("bg-slate-300" , "border-green-600" , "text-green-600");
         status.classList.add("border-red-600" , "text-red-600");
 
-
-
-
-        // const clonedcard = card.cloneNode(true);
-        // rejectedContainer.appendChild(clonedcard);
         updateCount();
     }
 
@@ -100,20 +87,10 @@ const interviewCount = document.getElementById("interview-count");
 const rejectedCount = document.getElementById("rejected-count");
 
 
-// allCount.innerHTML = allcontainer.children.length;
-// interviewCount.innerHTML = interviewContainer.children.length;
-// rejectedCount.innerHTML = rejectedContainer.children.length;
-
-
 
 
 function updateCount()
 {
-    
-    // allCount.innerHTML = allcontainer.children.length;
-    // interviewCount.innerHTML = interviewContainer.children.length;
-    // rejectedCount.innerHTML = rejectedContainer.children.length;
-
 
     const counts = {
         all : 0,
